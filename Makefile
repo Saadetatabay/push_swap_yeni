@@ -1,4 +1,4 @@
-SRC = atoi.c main.c operations.c utils.c utils2.c split.c big_sort.c
+SRC = atoi.c main.c operations.c utils.c utils2.c split.c big_sort.c utils3.c
 
 CC = cc
 
