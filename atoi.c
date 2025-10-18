@@ -6,7 +6,7 @@
 /*   By: satabay <satabay@student.42istanbul.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/12 13:39:51 by satabay           #+#    #+#             */
-/*   Updated: 2025/10/12 13:45:52 by satabay          ###   ########.fr       */
+/*   Updated: 2025/10/18 13:35:59 by satabay          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 int	ft_atoi(const char *nptr)
 {
-	int	            sign;
-	long long int   num;
+	int				sign;
+	long long int	num;
 
 	num = 0;
 	sign = 1;

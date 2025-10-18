@@ -6,7 +6,7 @@
 /*   By: satabay <satabay@student.42istanbul.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/15 16:22:35 by satabay           #+#    #+#             */
-/*   Updated: 2025/10/15 16:23:54 by satabay          ###   ########.fr       */
+/*   Updated: 2025/10/18 13:28:54 by satabay          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,10 +22,10 @@
 
 typedef struct s_node
 {
-	int	index;
-	int	value;
+	int				index;
+	int				value;
 	struct s_node	*next;
-} t_node;
+}	t_node;
 
 void	*ft_memcpy(void *dest, const void *src, size_t n);
 char	**ft_split(char const *s, char c);
