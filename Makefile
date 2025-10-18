@@ -16,10 +16,8 @@ $(LIB): $(OBJ)
 	ar rcs $(LIB) $(OBJ)
 
 $(NAME): $(OBJ)
-	$(CC) $(CFLAGS) -o $(NAME) $(OBJ)
+	$(CC) $(FLAGS) -o $(NAME) $(OBJ)
 
-%.o: %.c
-	$(CC) $(CFLAGS) -c $< -o $@
 
 clean : 
 		rm -f $(OBJ)

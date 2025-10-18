@@ -6,7 +6,7 @@
 /*   By: satabay <satabay@student.42istanbul.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/15 16:22:35 by satabay           #+#    #+#             */
-/*   Updated: 2025/10/18 13:28:54 by satabay          ###   ########.fr       */
+/*   Updated: 2025/10/18 14:25:34 by satabay          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ char	**ft_split(char const *s, char c);
 int		ft_atoi(const char *nptr);
 int		ft_isdigit(int c);
 int		ft_isnum(char *str);
-int		ft_error(void);
+int		ft_error(char **n, int arg);
 int		ft_dup(int indis, int num, char **argv);
 int		ft_check_sorted(t_node *stack);
 int		ft_stack_size(t_node *stack);
@@ -47,4 +47,7 @@ void	big_sort(t_node **stack_a, t_node **stack_b, int size);
 int		ft_max_bits(int max);
 void	index_stack(t_node **stack);
 void	print_stack(t_node *stack);
+void	free_splitt(char	**splitted);
+void	ft_lstclear(t_node **lst, void (*del)(void *));
+
 #endif

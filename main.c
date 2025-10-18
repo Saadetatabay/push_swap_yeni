@@ -6,7 +6,7 @@
 /*   By: satabay <satabay@student.42istanbul.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/12 13:40:12 by satabay           #+#    #+#             */
-/*   Updated: 2025/10/18 13:33:22 by satabay          ###   ########.fr       */
+/*   Updated: 2025/10/18 14:29:32 by satabay          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,13 +26,13 @@ char	**ft_check_arg(int argc, char **argv)
 	while (num[i])
 	{
 		if (!ft_isnum(num[i]))
-			ft_error();
+			ft_error(num, argc);
 		temp = ft_atoi(num[i]);
 		if (temp < INT_MIN || temp > INT_MAX)
-			ft_error();
+			ft_error(num, argc);
 		temp = (int)temp;
 		if (!ft_dup(i, temp, num))
-			ft_error();
+			ft_error(num, argc);
 		i++;
 	}
 	return (num);
@@ -60,6 +60,21 @@ void	stack_init(char **num, t_node **my_stack)
 	}
 }
 
+void	free_splitt(char	**splitted)
+{
+	int	i;
+
+	i = 0;
+	if (!splitted)
+		return ;
+	while (splitted[i])
+	{
+		free(splitted[i]);
+		i++;
+	}
+	free(splitted);
+}
+
 int	main(int argc, char **argv)
 {
 	char	**num;
@@ -69,11 +84,15 @@ int	main(int argc, char **argv)
 	stack_a = NULL;
 	stack_b = NULL;
 	if (argc == 1)
-		ft_error();
+		ft_error(NULL, argc);
 	if (argc == 2 && !*argv[1])
-		ft_error();
+		ft_error(NULL, argc);
 	num = ft_check_arg(argc, argv);
 	stack_init(num, &stack_a);
+	if (argc == 2)
+		free_splitt(num);
 	if (!ft_check_sorted(stack_a))
 		sort_stack(&stack_a, &stack_b, ft_stack_size(stack_a));
+	ft_lstclear(&stack_a, free);
+	ft_lstclear(&stack_b, free);
 }

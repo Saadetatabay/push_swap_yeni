@@ -6,7 +6,7 @@
 /*   By: satabay <satabay@student.42istanbul.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/12 13:40:32 by satabay           #+#    #+#             */
-/*   Updated: 2025/10/12 15:30:52 by satabay          ###   ########.fr       */
+/*   Updated: 2025/10/18 14:30:34 by satabay          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,8 +66,10 @@ int	ft_dup(int indis, int num, char **argv)
 	return (1);
 }
 
-int	ft_error(void)
+int	ft_error(char **n, int arg)
 {
+	if (arg == 2)
+		free_splitt(n);
 	write(1, "geeçrli değil error\n", 23);
 	exit (1);
 }

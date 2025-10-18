@@ -6,7 +6,7 @@
 /*   By: satabay <satabay@student.42istanbul.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/15 16:21:00 by satabay           #+#    #+#             */
-/*   Updated: 2025/10/15 16:21:04 by satabay          ###   ########.fr       */
+/*   Updated: 2025/10/18 14:30:06 by satabay          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,4 +36,16 @@ int	ft_stack_size(t_node *stack)
 		stack = stack->next;
 	}
 	return (ret);
+}
+
+void	ft_lstclear(t_node **lst, void (*del)(void *))
+{
+	t_node	*tmp;
+
+	while (*lst)
+	{
+		tmp = (*lst)->next;
+		free(*lst);
+		*lst = tmp;
+	}
 }
