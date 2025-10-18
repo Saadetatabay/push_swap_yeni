@@ -6,7 +6,7 @@
 /*   By: satabay <satabay@student.42istanbul.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/15 16:22:35 by satabay           #+#    #+#             */
-/*   Updated: 2025/10/18 14:25:34 by satabay          ###   ########.fr       */
+/*   Updated: 2025/10/18 18:17:19 by satabay          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ typedef struct s_node
 
 void	*ft_memcpy(void *dest, const void *src, size_t n);
 char	**ft_split(char const *s, char c);
-int		ft_atoi(const char *nptr);
+long long int		ft_atoi(const char *nptr);
 int		ft_isdigit(int c);
 int		ft_isnum(char *str);
 int		ft_error(char **n, int arg);
@@ -47,7 +47,10 @@ void	big_sort(t_node **stack_a, t_node **stack_b, int size);
 int		ft_max_bits(int max);
 void	index_stack(t_node **stack);
 void	print_stack(t_node *stack);
-void	free_splitt(char	**splitted);
-void	ft_lstclear(t_node **lst, void (*del)(void *));
+void	free_splitt(char	**splitted, int argc);
+void	ft_lstclear(t_node **lst);
+char	*ft_strtrim(char const *s1, char const *set);
+size_t	ft_strlen(const char *s);
+char	*ft_strchr(const char *s, int c);
 
 #endif

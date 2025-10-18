@@ -1,12 +1,12 @@
-SRC = atoi.c main.c operations.c utils.c utils2.c split.c big_sort.c utils3.c
+SRC = atoi.c main.c operations.c utils.c utils2.c split.c big_sort.c utils3.c ft_strtrim.c
 
 CC = cc
 
-FLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror
 
-LIB = pushswap.a
+LIB = push_swap.a
 
-NAME = pushswap
+NAME = push_swap
 
 OBJ = $(SRC:.c=.o)
 
@@ -16,7 +16,7 @@ $(LIB): $(OBJ)
 	ar rcs $(LIB) $(OBJ)
 
 $(NAME): $(OBJ)
-	$(CC) $(FLAGS) -o $(NAME) $(OBJ)
+	$(CC) $(CFLAGS) -o $(NAME) $(OBJ)
 
 
 clean : 

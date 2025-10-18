@@ -6,7 +6,7 @@
 /*   By: satabay <satabay@student.42istanbul.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/12 13:40:53 by satabay           #+#    #+#             */
-/*   Updated: 2025/10/12 13:58:24 by satabay          ###   ########.fr       */
+/*   Updated: 2025/10/18 17:58:30 by satabay          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,9 +73,12 @@ void	add_tail_to_head(t_node **a)
 	t_node	*lst;
 	t_node	*temp;
 	//burayı sor
-	temp = *a;
+	
 	if (!*a || !(*a)->next)
 		return ;
+	lst = NULL;
+	temp = NULL;
+	temp = *a;
 	while (temp->next)
 	{
 		if (!temp->next->next)
