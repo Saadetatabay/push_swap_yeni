@@ -6,7 +6,7 @@
 /*   By: satabay <satabay@student.42istanbul.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/12 13:39:40 by satabay           #+#    #+#             */
-/*   Updated: 2025/10/18 13:35:12 by satabay          ###   ########.fr       */
+/*   Updated: 2025/10/23 13:40:37 by satabay          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,16 +42,6 @@ int	ft_max_bits(int max)
 	while (max >> max_bit != 0)
 		max_bit++;
 	return (max_bit);
-}
-
-void	print_stack(t_node *stack)
-{
-	while (stack)
-	{
-		printf("%d -> ", stack->value);
-		stack = stack->next;
-	}
-	printf("NULL\n");
 }
 
 void	big_sort(t_node **stack_a, t_node **stack_b, int size)
