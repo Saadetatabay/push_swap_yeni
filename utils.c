@@ -6,7 +6,7 @@
 /*   By: satabay <satabay@student.42istanbul.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/12 13:40:32 by satabay           #+#    #+#             */
-/*   Updated: 2025/10/18 18:18:28 by satabay          ###   ########.fr       */
+/*   Updated: 2025/10/23 11:58:54 by satabay          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,7 @@ int	ft_dup(int indis, int num, char **argv)
 
 int	ft_error(char **n, int arg)
 {
-	free_splitt(n,arg);
+	free_splitt(n, arg);
 	write(1, "Error\n", 7);
 	exit (1);
 }

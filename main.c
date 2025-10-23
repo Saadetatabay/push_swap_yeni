@@ -6,40 +6,20 @@
 /*   By: satabay <satabay@student.42istanbul.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/12 13:40:12 by satabay           #+#    #+#             */
-/*   Updated: 2025/10/18 18:18:51 by satabay          ###   ########.fr       */
+/*   Updated: 2025/10/23 12:30:57 by satabay          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-char	**ft_check_arg(int argc, char **argv)
+void	ft_check_arg_two(char	**num, int argc)
 {
-	int				j;
 	int				i;
 	long long int	temp;
-	char			**num;
 
-	j = 0;
 	i = 0;
-	if (argc == 2)
-	{
-		num = ft_split(argv[1], ' ');
-		
-		if (!num || !*num)
-			ft_error(num, argc);
-	}
-	else
-	{	
-		num = argv + 1;
-		while(num[j])
-		{
-			num[j] = ft_strtrim(num[j]," ");
-			j++;
-		}
-	}
 	while (num[i])
 	{
-		
 		if (!ft_isnum(num[i]))
 			ft_error(num, argc);
 		temp = ft_atoi(num[i]);
@@ -50,6 +30,32 @@ char	**ft_check_arg(int argc, char **argv)
 			ft_error(num, argc);
 		i++;
 	}
+}
+
+char	**ft_check_arg(int argc, char **argv)
+{
+	int				j;
+	int				i;
+	char			**num;
+
+	j = 0;
+	i = 0;
+	if (argc == 2)
+	{
+		num = ft_split(argv[1], ' ');
+		if (!num || !*num)
+			ft_error(num, argc);
+	}
+	else
+	{	
+		num = argv + 1;
+		while (num[j])
+		{
+			num[j] = ft_strtrim(num[j], " ");
+			j++;
+		}
+	}
+	ft_check_arg_two(num, argc);
 	return (num);
 }
 
@@ -105,7 +111,7 @@ int	main(int argc, char **argv)
 		ft_error(NULL, argc);
 	num = ft_check_arg(argc, argv);
 	stack_init(num, &stack_a);
-	free_splitt(num,argc);
+	free_splitt(num, argc);
 	if (!ft_check_sorted(stack_a))
 		sort_stack(&stack_a, &stack_b, ft_stack_size(stack_a));
 	ft_lstclear(&stack_a);

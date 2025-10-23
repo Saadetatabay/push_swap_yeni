@@ -6,7 +6,7 @@
 /*   By: satabay <satabay@student.42istanbul.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/12 13:40:44 by satabay           #+#    #+#             */
-/*   Updated: 2025/10/15 16:21:26 by satabay          ###   ########.fr       */
+/*   Updated: 2025/10/23 12:21:09 by satabay          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,29 +39,33 @@ void	sort_three(t_node **stack)
 	}
 }
 
+void	find_min_value(t_node	*stack_a, int *index)
+{
+	int		i;
+	int		min;
+
+	i = 0;
+	min = stack_a->value;
+	while (stack_a)
+	{
+		if (stack_a->value < min)
+		{
+			min = stack_a->value;
+			*index = i;
+		}
+		stack_a = stack_a->next;
+		i++;
+	}
+}
+
 void	push_min_value_to_b(t_node **stack_a, t_node **stack_b)
 {
 	int		indeks;
-	t_node	*iter;
-	int		min;
-	int		i;
 	int		size;
 
-	i = 0;
 	indeks = 0;
-	iter = (*stack_a);
-	min = iter->value;
-	while (iter)
-	{
-		if (iter->value < min)
-		{
-			min = iter->value;
-			indeks = i;
-		}
-		iter = iter->next;
-		i++;
-	}
 	size = ft_stack_size(*stack_a);
+	find_min_value(*stack_a, &indeks);
 	if (indeks <= (size -1) / 2)
 	{
 		while (indeks--)
